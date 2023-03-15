@@ -86,9 +86,17 @@ async function predictLandmarks() {
 
         //classify hand gesture using k-nearest neighbors algorithm
         let prediction = machine.classify(currentHandPositionNeuteral)
-        
-        //display prediction
-        resultPrediction.innerHTML = `Ik denk dat het een '${prediction}' is.`
+
+
+
+        if (prediction == undefined) {
+            //display prediction
+            resultPrediction.innerHTML = `Het is een...`
+        } else {
+            //display prediction
+            resultPrediction.innerHTML = `Ik denk dat het een '${prediction}' is.`
+        }
+
     }
     requestAnimationFrame(predictLandmarks)
 }
