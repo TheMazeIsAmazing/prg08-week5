@@ -2,7 +2,7 @@
 let model
 let videoWidth, videoHeight
 let ctx, canvas
-let currentHandPositionNeuteral = [];
+let currentHandPositionNeutral = [];
 const log = document.querySelector("#array")
 const buttonContaier = document.querySelector("#button-container")
 const resultPrediction = document.querySelector("#epic-result")
@@ -82,10 +82,10 @@ async function predictLandmarks() {
         drawHand(ctx, predictions[0].landmarks, predictions[0].annotations)
 
         //normalize finger positions
-        currentHandPositionNeuteral = normalizeFunction(predictions)
+        currentHandPositionNeutral = normalizeFunction(predictions)
 
         //classify hand gesture using k-nearest neighbors algorithm
-        let prediction = machine.classify(currentHandPositionNeuteral)
+        let prediction = machine.classify(currentHandPositionNeutral)
 
 
 
@@ -180,8 +180,8 @@ function normalizeFunction(rawObject) {
 
 //Handle the training event
 function trainHandler(event) {
-    if (event.target.nodeName == 'BUTTON' && currentHandPositionNeuteral.length == 42) {
-        machine.learn(currentHandPositionNeuteral, event.target.innerHTML)
+    if (event.target.nodeName == 'BUTTON' && currentHandPositionNeutral.length == 42) {
+        machine.learn(currentHandPositionNeutral, event.target.innerHTML)
     }
 
 }
