@@ -24,6 +24,7 @@ button {
     font-weight: 900;
     height: 36px;
     width: 36px;
+    overflow: hidden;
 }
 
 button:hover {
