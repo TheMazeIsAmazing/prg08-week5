@@ -46,6 +46,7 @@ video {
     display: none;
     width: auto;
     height: auto;
+    overflow-x: scroll;
 }
 
 img {
